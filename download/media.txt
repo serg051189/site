@@ -1,0 +1,56 @@
+@media (max-width:570px){
+   .header__text{
+  font-size: 14px;
+}
+  .tovar {    
+    max-width: 140px;
+    border: 1px solid #96b60b;  
+    margin: 10px 5px;
+    padding: 5px;
+    
+  }
+  .max-cash{
+    font-size: 14px;  
+  }
+  .mfo__logo{
+    max-width: 120px;
+    height: 55px;
+    margin: 0px auto 0px;
+  }
+  .mfo__about-row{
+    margin-bottom: 5px;
+  }
+
+.mfo__about-row img{
+  height: 18px;
+}
+.mfo__about-row p{
+  font-size: 10px;
+  margin-left: 5px;
+  
+}
+  
+  
+.button{
+  margin: 0 auto; 
+  border: 1px solid #96b60b;
+  font-size: 12px;
+  padding: 0 10px;
+  height: 26px;
+  line-height: 26px;   
+  width:100%;
+  text-align: center;
+  }
+  
+} 
+
+@media (max-width:460px){
+  .tovar{
+    max-width:160px;
+  }
+  .mfo__logo{
+    max-width: 140px;
+    height: 60px;
+    margin: 0px auto 0px;
+  }
+}

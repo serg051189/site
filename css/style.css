@@ -1,0 +1,605 @@
+/*---Обнуление---*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+html{
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(245, 247, 246);
+  margin: 0 0 20px 0;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+/*--------------------*/
+/*--------------------*/
+/*--------------------*/
+
+
+.conteiner{
+  max-width:1940px;
+  margin: 0 auto;
+  padding: 0 10px;
+  
+}
+
+
+/* header */
+
+.header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  border: 2px solid #14856c;
+}
+.header::before{
+  content: "";
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#fff;
+  z-index: 2;
+}
+.header__body{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin: 0 20px;
+}
+.link-logo{
+  cursor: pointer;
+}
+.header__logo{
+  display:block;
+  max-width: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+.header__logo img{
+  max-width: 100%;
+}
+.menu__list{
+  display: flex;
+  position: relative;
+  z-index: 2;  
+  align-items: center;
+}
+.menu__list li{
+  margin-left: 18px;
+  list-style: none;
+}
+.menu__link{  
+  font-size: 14px;
+  color:#14856c;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  margin-left: 20px;
+}
+.menu__link:hover{
+  color:#96b60b;  
+}
+.title{
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  max-width: 80%;
+  margin: 20px auto 0;
+  text-shadow: -1px 1px #aafcea;
+  color: #10352c;
+}
+.sub-header__text{
+  margin: 80px auto 0;
+}
+
+/* /////////////////////// */
+
+/* Burger */
+
+.header__burger{
+  display: none;
+}
+@media (max-width:767px){
+  body.lock{
+    overflow: hidden;
+  }
+  .header__body{
+    height: 40px;
+    margin: 0 10px;
+  }  
+  .header__burger{
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+  }  
+  .header__burger span{
+    position: absolute;
+    background-color: #14856c;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all 0.3s ease 0s;
+  }
+  .header__burger::before,
+  .header__burger::after{
+    content: "";
+    background-color: #14856c;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+    
+  }
+  .header__burger::before{
+    top: 0;
+  }
+  .header__burger::after{
+    bottom: 0;
+  }
+  .header__burger.active::before{
+    transform:rotate(45deg);
+    top:9px; 
+  }
+  .header__burger.active::after{
+    transform:rotate(-45deg); 
+    bottom:9px; 
+  }
+  .header__burger.active span {
+    transform: scale(0);
+  }
+  .header__menu{
+    position: fixed;
+    overflow: auto;
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(236, 253, 243, 0.9);
+    padding: 70px 20px 0;
+    transition: all 0.3s ease 0s;
+  }
+  .header__menu.active{
+    top: 0;
+    padding: 70px 20px 0;
+  } 
+  .menu__list{
+    display: block;
+    margin: 10px auto;
+
+  }
+  .menu__list > li{
+    margin:0 auto 30px;
+    
+  }
+  .menu__link{
+    font-size: 22px;
+  }
+}
+
+/* //////////////////////// */
+
+/* cards */
+
+.mfo__gallery{
+  display: flex; 
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 200px;
+  border: 2px solid #96b60b;
+  border-radius: 3px;
+  margin: 10px 10px;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 0.3s ease-in;  
+}
+.card:hover{
+  box-shadow: -2px 2px 17px #14856c;
+  transition: all 0.3s ease-in;
+  transform: translate(0,-1%);
+}
+.mfo__logo{
+    display: block;
+    width: 180px;
+    height: 70px;
+    margin: 0px auto 0px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+}
+.mfo__about{
+  margin:0 auto;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items:flex-start;
+  padding: 5px;
+  
+}
+.mfo__about-row{
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+}
+.mfo__about-row img{
+  width: 25px;
+  height: 25px;  
+}
+.mfo__about-row p{
+  margin-left: 10px;
+}
+.strong{
+  font-weight: 700;
+}
+
+.button{
+background: #96b60b none repeat scroll 0 0;
+border: 2px solid #96b60b;
+border-radius: 3px;
+color: #fff;
+cursor: pointer;
+display: inline-block;
+font-size: 14px;
+text-transform: uppercase;
+text-align: center;
+font-weight: 700;
+height: 38px;
+line-height: 38px;
+padding: 0 5px;
+margin: 0 8px;
+text-decoration: none;
+transition: all 0.33s ease;
+}
+.button:hover{
+  color: #96b60b !important;
+  text-decoration: none;
+  background: none;
+  border: 2px solid #96b60b;
+  transition: all 0.33s ease;
+}
+
+/* /////////////////////// */
+
+/* Як отримати кредит */
+
+.how__wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;  
+}
+.how__card {
+  flex: 1 1 25%;    
+  padding: 10px;  
+  text-align: center;
+}
+.how__img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  overflow:hidden ;
+  margin: 5px auto;
+}
+.how__img img{
+  max-width: 100%;
+}
+.how__title { 
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 5px; 
+}
+.how__text {
+  font-size: 14px;
+  
+} 
+
+/* /////////////////////// */
+
+/* <!-- questions --> */
+
+.questions {
+  margin-bottom: 30px;
+}
+
+.questions-item {
+  margin: 20px 40px 10px 40px;
+}
+.questions-title {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1.5;
+  padding:10px 0 10px 35px;
+  background-color: #ebf7b7 ;
+  cursor: pointer;
+  border: 1px solid #96b60b;
+  border-radius: 2px;
+}
+
+
+.questions-title::before,
+.questions-title::after{
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 2px;
+  background-color:  #10352c;  
+  top: 15px;
+  transition: all 0.3s ease 0;
+}
+.questions-title::before{
+  transform: rotate(40deg);
+  left: 10px;
+}
+.questions-title::after{
+  transform: rotate(-40deg);
+  left: 16px;
+}
+.questions-title.active::before,
+.questions-title.active::after{
+  background-color:   #96b60b
+}
+.questions-title.active::before{
+  transform: rotate(-40deg)
+}
+.questions-title.active::after{
+  transform: rotate(40deg)
+}
+
+.questions-text {
+  padding: 14px 0 0 0px;
+  line-height: 1.5;
+  display: none;
+}
+
+/* /////////////////////// */
+
+/* Інформація про кредиторів */
+
+
+.about__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.about__inner{
+  flex: 0 1 300px;  
+  margin: 10px 5px;
+  border: 1px solid #96b60b;
+  text-align: center;
+}
+.about__inner p{  
+  font-size: 12px;
+  padding: 8px 0;
+  line-height: 1.5;
+  border-top: 1px solid #96b60b ;
+}
+.about__inner p:first-child {
+  border-top: none;  
+}
+.about__inner p:nth-child(odd) {
+  background-color: #ebf7b7  ;  
+}
+.about__name a {
+  color: black;  
+}
+.about__link,a{
+  color: #14856c;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+}
+.about__link,a:hover{
+  color:#96b60b;
+}
+
+/* /////////////////////// */
+
+/* scrollup */
+
+.scrollup{
+  bottom: 20px;  
+  display: block;
+  height: 30px;
+  position: fixed;
+  right: 15px;
+  width: 30px;
+  z-index: 100;
+  opacity: 0.5;  
+  color: transparent;
+  }
+
+/* /////////////////////// */
+
+
+/* Footer */
+.footer {
+  margin: 10px 0 0 0;
+  padding: 10px 40px;
+  text-align: center;
+  color: #14856c;
+  font-size: 10px; 
+}
+.footer p{
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* /////////////////////// */
+
+
+/* Flags */
+
+.flag::after {
+    content: "";
+    height: 57px;
+    position: absolute;
+    right: -3px;
+    top: -2px;
+    width: 70px;
+    opacity: 0.6;
+    z-index: 3;
+    }
+  .zaim1::after {
+    background: rgba(0, 0, 0, 0) url("../img/icon/flag-1zaim.svg") no-repeat scroll 0 0;
+    }
+    .action::after {
+    background: rgba(0, 0, 0, 0) url("../img/icon/flag-action.svg") no-repeat scroll 0 0;
+    }
+    .autoapprove::after {
+    background: rgba(0, 0, 0, 0) url("../img/icon/flag-autoapprove.svg") no-repeat scroll 0 0;
+    }
+    .badki::after {
+    background: rgba(0, 0, 0, 0) url("../img/icon/flag-badki.svg") no-repeat scroll 0 0;
+    }
+  /* } */
+/* /////////////////////// */
+
+
+  /* Медиазапросы */
+
+  @media (max-width:490px){
+   .sub-header__text{
+     margin: 60px auto 0;
+   }
+  .card {      
+    flex: 0 1 140px;
+     border: 1px solid #96b60b;      
+     margin: 5px 5px;
+     padding: 2px 0px;
+     font-size: 10px;
+  }    
+  .mfo__logo{  
+    width: 130px;
+    height: 55px;    
+}
+  .mfo__about-row img{
+    width: 20px;
+    height: 20px;  
+  }
+  .button{
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    height: 30px;
+    line-height: 30px;  
+    }
+  .how__img {  
+    width: 40px;
+    height: 40px;  
+  }
+  .how__title {   
+    font-size: 14px;  
+  }
+  .how__text {
+    font-size: 12px;  
+  } 
+  .questions-item {
+    margin: 20px 0 10px;
+  }
+  .title{
+    font-size: 16px;
+  }
+  .scrollup{    
+    height: 15px;    
+    right: 30px;
+    bottom: 30px;
+    width: 15px;     
+  } 
+  .footer {
+    margin: 10px 0 0 0;
+    padding: 10px 10px;
+  }
+}
